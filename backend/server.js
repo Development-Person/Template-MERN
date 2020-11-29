@@ -17,6 +17,8 @@ connectDB();
 //Turn on morgan if in development
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
+} else {
+  app.use(morgan('short'));
 }
 
 //connect to PORT set in global environment, or else 5000
