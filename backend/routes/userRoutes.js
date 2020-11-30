@@ -1,9 +1,8 @@
 import express from 'express';
 const router = express.Router();
+import { getUsers, getUserById } from '../controllers/userControllers.js';
 
-//@route    GET api/users
-//@desc     Test route
-//@access   Public
-router.get('/', (req, res) => res.send('User Route'));
+router.route('/').get(getUsers);
+router.route('/:id').get(getUserById);
 
 export default router;
