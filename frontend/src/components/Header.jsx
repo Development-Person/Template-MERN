@@ -1,4 +1,5 @@
 import React from 'react';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 
 const Header = () => {
@@ -6,28 +7,32 @@ const Header = () => {
     <header>
       <Navbar bg='light' expand='lg' collapseOnSelect>
         <Container>
-          <Navbar.Brand href='/'>Template MERN</Navbar.Brand>
+          <LinkContainer to='/'>
+            <Navbar.Brand>Template MERN</Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
-              <Nav.Link href='/bath'>
-                <i className='fa fa-bath'></i> Have a Bath
-              </Nav.Link>
-              <Nav.Link href='/login'>
-                <i className='fa fa-user'></i> Log In
-              </Nav.Link>
+              <LinkContainer to='/bath'>
+                <Nav.Link>
+                  <i className='fa fa-bath'></i> Have a Bath
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/login'>
+                <Nav.Link>
+                  <i className='fa fa-user'></i> Log In
+                </Nav.Link>
+              </LinkContainer>
               <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
-                <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
-                <NavDropdown.Item href='#action/3.2'>
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href='#action/3.3'>
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href='#action/3.4'>
-                  Separated link
-                </NavDropdown.Item>
+                <LinkContainer to='/hello'>
+                  <NavDropdown.Item>Hello</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/goodbye'>
+                  <NavDropdown.Item>GoodBye</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/again'>
+                  <NavDropdown.Item>Again?</NavDropdown.Item>
+                </LinkContainer>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

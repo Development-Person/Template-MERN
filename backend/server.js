@@ -23,6 +23,9 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('short'));
 }
 
+//Middleware
+app.use(express.json());
+
 //Connect to PORT set in global environment, or else 5000
 const PORT = process.env.PORT || 5000;
 
